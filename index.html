@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flex Print Patna</title>
+
+<!-- SEO + LINK PREVIEW (IMPORTANT) -->
+<title>Flex Print Patna | Best Printing Services</title>
+<meta name="description" content="Best Flex Printing in Patna. Star Flex, Vinyl, Sunboard, Backlight, Wall Wrap. Call Now!">
+
+<!-- WhatsApp / Facebook Preview -->
+<meta property="og:title" content="Best Flex Printing in Patna">
+<meta property="og:description" content="High Quality Printing | Fast Delivery | Affordable Price">
+<meta property="og:image" content="https://terasynctech.github.io/flex-print-patna/banner1.png">
+<meta property="og:type" content="website">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -12,11 +21,13 @@
 
 body { background:#0f0f0f; color:white; }
 
-/* HERO SLIDER */
+/* HERO SLIDER FIX */
 .hero-slider {
   position: relative;
-  height: 320px;
+  width: 100%;
+  aspect-ratio: 16/9;   /* ✅ FIXED: no cutting */
   overflow: hidden;
+  background: black;
 }
 
 .slide {
@@ -32,7 +43,6 @@ body { background:#0f0f0f; color:white; }
   z-index: 1;
 }
 
-/* Fix: first image always visible */
 .slide:first-child {
   opacity: 1;
 }
@@ -40,7 +50,7 @@ body { background:#0f0f0f; color:white; }
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;   /* ✅ FIXED: full banner visible */
 }
 
 /* SECTION */
@@ -81,6 +91,7 @@ body { background:#0f0f0f; color:white; }
   position:fixed;
   bottom:20px;
   right:20px;
+  z-index:999;
 }
 
 .float a {
@@ -90,6 +101,7 @@ body { background:#0f0f0f; color:white; }
   border-radius:50%;
   color:white;
   font-size:20px;
+  text-align:center;
 }
 
 .wa { background:#25d366; }
@@ -107,19 +119,19 @@ body { background:#0f0f0f; color:white; }
 
 <body>
 
-<!-- HERO SLIDER (ONLY IMAGES) -->
+<!-- HERO SLIDER -->
 <div class="hero-slider">
 
   <div class="slide active">
-    <img src="banner1.png" alt="Flex Printing Banner 1">
+    <img src="banner1.png">
   </div>
 
   <div class="slide">
-    <img src="banner2.png" alt="Flex Printing Banner 2">
+    <img src="banner2.png">
   </div>
 
   <div class="slide">
-    <img src="banner3.png" alt="Flex Printing Banner 3">
+    <img src="banner3.png">
   </div>
 
 </div>
