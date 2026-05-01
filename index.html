@@ -7,78 +7,70 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-<!-- AOS Animation -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
 
-body {
-  background:#0f0f0f;
-  color:#fff;
-  scroll-behavior:smooth;
+body { background:#0f0f0f; color:white; }
+
+/* HERO SLIDER */
+.hero-slider {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
 }
 
-/* HERO */
-.hero {
-  background: linear-gradient(270deg, #ff0000, #ff6600, #ff0000);
-  background-size: 600% 600%;
-  animation: gradientMove 8s ease infinite;
-  padding:60px 20px;
-  text-align:center;
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 1s;
 }
 
-@keyframes gradientMove {
-  0% {background-position:0% 50%;}
-  50% {background-position:100% 50%;}
-  100% {background-position:0% 50%;}
+.slide.active { opacity: 1; }
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.hero h1 { font-size:32px; font-weight:700; }
-.hero p { margin:10px 0 20px; }
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+}
 
-/* BUTTONS */
+/* CONTENT */
+.content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.content h1 { font-size: 22px; margin-bottom: 10px; }
+.content p { font-size: 14px; margin-bottom: 10px; }
+
+/* BUTTON */
 .btn {
-  padding:12px 25px;
-  border-radius:30px;
-  text-decoration:none;
-  margin:5px;
-  display:inline-block;
-  font-weight:600;
-  transition:0.3s;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
 }
 
-.call { background:#00c853; color:white; }
+.call { background:red; color:white; }
 .whatsapp { background:#25d366; color:white; }
 
-.btn:hover {
-  transform:scale(1.1);
-  box-shadow:0 0 20px rgba(255,255,255,0.3);
-}
-
-/* PULSE EFFECT */
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-}
-
-/* BANNER */
-.banner img {
-  width:100%;
-  border-radius:15px;
-  margin-top:20px;
-  transition:0.5s;
-}
-
-.banner img:hover {
-  transform:scale(1.03);
-}
-
 /* SECTION */
-.section { padding:50px 20px; text-align:center; }
+.section { padding:40px 20px; text-align:center; }
 
-/* CARDS */
 .cards {
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -87,99 +79,112 @@ body {
 }
 
 .card {
-  background:rgba(255,255,255,0.05);
+  background:#1c1c1c;
   padding:20px;
-  border-radius:15px;
-  backdrop-filter:blur(12px);
-  transition:0.3s;
-}
-
-.card:hover {
-  transform:translateY(-8px) scale(1.05);
-  background:rgba(255,255,255,0.1);
+  border-radius:12px;
 }
 
 /* OFFER */
 .offer {
-  background:linear-gradient(90deg, yellow, orange);
+  background:orange;
   color:black;
-  padding:20px;
-  font-weight:bold;
+  padding:15px;
   text-align:center;
-  animation: glow 1.5s infinite alternate;
+  font-weight:bold;
 }
 
-@keyframes glow {
-  from { box-shadow:0 0 10px yellow; }
-  to { box-shadow:0 0 25px orange; }
+/* MAP */
+.map iframe {
+  width:100%;
+  height:250px;
+  border:0;
+  border-radius:10px;
 }
 
-/* FLOATING BUTTONS */
-.floating {
+/* FLOAT BUTTON */
+.float {
   position:fixed;
   bottom:20px;
   right:20px;
 }
 
-.floating a {
+.float a {
   display:block;
   margin:10px 0;
   padding:15px;
   border-radius:50%;
-  text-align:center;
   color:white;
 }
 
-.floating .wa {
-  background:#25d366;
-  animation:pulse 2s infinite;
-}
-
-.floating .call {
-  background:#ff0000;
-}
+.wa { background:#25d366; }
+.ph { background:red; }
 
 /* FOOTER */
 .footer {
-  background:#000;
+  background:black;
   padding:20px;
   text-align:center;
+  font-size:14px;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1 data-aos="fade-down">Best Flex Printing in Patna</h1>
-  <p data-aos="fade-up">Star Flex | Vinyl | Sunboard | Backlight | Wall Wrap</p>
+<!-- HERO SLIDER -->
+<div class="hero-slider">
 
-  <a href="tel:9507212121" class="btn call" data-aos="zoom-in">📞 Call Now</a>
-  <a href="https://wa.me/917280076112?text=Hi%20I%20need%20flex%20printing" class="btn whatsapp" data-aos="zoom-in">💬 WhatsApp</a>
-
-  <div class="banner" data-aos="zoom-in">
-    <img src="banner.jpg">
+  <div class="slide active">
+    <img src="banner1.jpg">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Best Flex Printing in Patna</h1>
+      <p>Star Flex | Vinyl | Sunboard | Backlight | Wall Wrap</p>
+      <a href="tel:9507212121" class="btn call">Call Now</a>
+      <a href="https://wa.me/917280076112" class="btn whatsapp">WhatsApp</a>
+    </div>
   </div>
+
+  <div class="slide">
+    <img src="banner2.jpg">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>All Printing Solutions</h1>
+      <p>Best Quality | Fast Delivery | Affordable Price</p>
+      <a href="tel:9507212121" class="btn call">Call Now</a>
+      <a href="https://wa.me/917280076112" class="btn whatsapp">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="banner3.jpg">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Bright Ideas, Perfect Prints</h1>
+      <p>Trusted Printing Service in Patna</p>
+      <a href="tel:9507212121" class="btn call">Call Now</a>
+      <a href="https://wa.me/917280076112" class="btn whatsapp">WhatsApp</a>
+    </div>
+  </div>
+
 </div>
 
-<!-- TRUST -->
+<!-- WHY -->
 <div class="section">
-  <h2 data-aos="fade-up">Why Choose Us?</h2>
-  <p data-aos="fade-up">✔ Best Quality ✔ Fast Delivery ✔ Affordable Price ✔ Trusted in Patna</p>
+  <h2>Why Choose Us?</h2>
+  <p>✔ Best Quality ✔ Fast Delivery ✔ Affordable Price ✔ Trusted in Patna</p>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
-  <h2 data-aos="fade-up">Our Services</h2>
+  <h2>Our Services</h2>
   <div class="cards">
-    <div class="card" data-aos="fade-up">Star Flex</div>
-    <div class="card" data-aos="fade-up">Vinyl Printing</div>
-    <div class="card" data-aos="fade-up">GSB Standee</div>
-    <div class="card" data-aos="fade-up">Sunboard</div>
-    <div class="card" data-aos="fade-up">Backlight</div>
-    <div class="card" data-aos="fade-up">Wall Wrap</div>
+    <div class="card">Star Flex</div>
+    <div class="card">Vinyl Printing</div>
+    <div class="card">GSB Standee</div>
+    <div class="card">Sunboard</div>
+    <div class="card">Backlight</div>
+    <div class="card">Wall Wrap</div>
   </div>
 </div>
 
@@ -190,30 +195,40 @@ body {
 
 <!-- CONTACT -->
 <div class="section">
-  <h2 data-aos="fade-up">Contact Us</h2>
-  <p data-aos="fade-up">📍 Pillar No. 76, Sheikhpura, Patna</p>
-  <p data-aos="fade-up">📞 9507212121 / 7280076112</p>
-  <p data-aos="fade-up">📧 smartadprint@gmail.com</p>
+  <h2>Contact Us</h2>
+  <p>📍 Plot No. 76, Mazar Gali, Sheikhpura, Patna -14</p>
+  <p>📞 9507212121 / 7280076112</p>
+  <p>📧 smartadprint@gmail.com</p>
+  <p>🕒 9:30 AM – 7:30 PM (Sunday Closed)</p>
 </div>
 
-<!-- FLOATING BUTTON -->
-<div class="floating">
+<!-- MAP -->
+<div class="section map">
+  <h2>Find Us</h2>
+  <iframe src="https://www.google.com/maps?q=Plot%20No%2076%20Mazar%20Gali%20Sheikhpura%20Patna&output=embed"></iframe>
+</div>
+
+<!-- FLOAT BUTTON -->
+<div class="float">
   <a href="https://wa.me/917280076112" class="wa">💬</a>
-  <a href="tel:9507212121" class="call">📞</a>
+  <a href="tel:9507212121" class="ph">📞</a>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>© 2026 Flex Print</p>
+  <p>© 2026 Flex Print | Powered by TeraSyncTech</p>
 </div>
 
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- SLIDER JS -->
 <script>
-AOS.init({
-  duration:1000,
-  once:true
-});
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+}, 4000);
 </script>
 
 </body>
