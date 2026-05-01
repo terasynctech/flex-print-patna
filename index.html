@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flex Print Patna</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+
+body {
+  background:#0f0f0f;
+  color:#fff;
+  scroll-behavior:smooth;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(270deg, #ff0000, #ff6600, #ff0000);
+  background-size: 600% 600%;
+  animation: gradientMove 8s ease infinite;
+  padding:60px 20px;
+  text-align:center;
+}
+
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+.hero h1 { font-size:32px; font-weight:700; }
+.hero p { margin:10px 0 20px; }
+
+/* BUTTONS */
+.btn {
+  padding:12px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  margin:5px;
+  display:inline-block;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.call { background:#00c853; color:white; }
+.whatsapp { background:#25d366; color:white; }
+
+.btn:hover {
+  transform:scale(1.1);
+  box-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+
+/* PULSE EFFECT */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* BANNER */
+.banner img {
+  width:100%;
+  border-radius:15px;
+  margin-top:20px;
+  transition:0.5s;
+}
+
+.banner img:hover {
+  transform:scale(1.03);
+}
+
+/* SECTION */
+.section { padding:50px 20px; text-align:center; }
+
+/* CARDS */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:20px;
+}
+
+.card {
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:15px;
+  backdrop-filter:blur(12px);
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-8px) scale(1.05);
+  background:rgba(255,255,255,0.1);
+}
+
+/* OFFER */
+.offer {
+  background:linear-gradient(90deg, yellow, orange);
+  color:black;
+  padding:20px;
+  font-weight:bold;
+  text-align:center;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow:0 0 10px yellow; }
+  to { box-shadow:0 0 25px orange; }
+}
+
+/* FLOATING BUTTONS */
+.floating {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+}
+
+.floating a {
+  display:block;
+  margin:10px 0;
+  padding:15px;
+  border-radius:50%;
+  text-align:center;
+  color:white;
+}
+
+.floating .wa {
+  background:#25d366;
+  animation:pulse 2s infinite;
+}
+
+.floating .call {
+  background:#ff0000;
+}
+
+/* FOOTER */
+.footer {
+  background:#000;
+  padding:20px;
+  text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1 data-aos="fade-down">Best Flex Printing in Patna</h1>
+  <p data-aos="fade-up">Star Flex | Vinyl | Sunboard | Backlight | Wall Wrap</p>
+
+  <a href="tel:9507212121" class="btn call" data-aos="zoom-in">📞 Call Now</a>
+  <a href="https://wa.me/917280076112?text=Hi%20I%20need%20flex%20printing" class="btn whatsapp" data-aos="zoom-in">💬 WhatsApp</a>
+
+  <div class="banner" data-aos="zoom-in">
+    <img src="banner.jpg">
+  </div>
+</div>
+
+<!-- TRUST -->
+<div class="section">
+  <h2 data-aos="fade-up">Why Choose Us?</h2>
+  <p data-aos="fade-up">✔ Best Quality ✔ Fast Delivery ✔ Affordable Price ✔ Trusted in Patna</p>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+  <h2 data-aos="fade-up">Our Services</h2>
+  <div class="cards">
+    <div class="card" data-aos="fade-up">Star Flex</div>
+    <div class="card" data-aos="fade-up">Vinyl Printing</div>
+    <div class="card" data-aos="fade-up">GSB Standee</div>
+    <div class="card" data-aos="fade-up">Sunboard</div>
+    <div class="card" data-aos="fade-up">Backlight</div>
+    <div class="card" data-aos="fade-up">Wall Wrap</div>
+  </div>
+</div>
+
+<!-- OFFER -->
+<div class="offer">
+  🎉 Limited Offer: Get 10% Discount Today – Call Now!
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <h2 data-aos="fade-up">Contact Us</h2>
+  <p data-aos="fade-up">📍 Pillar No. 76, Sheikhpura, Patna</p>
+  <p data-aos="fade-up">📞 9507212121 / 7280076112</p>
+  <p data-aos="fade-up">📧 smartadprint@gmail.com</p>
+</div>
+
+<!-- FLOATING BUTTON -->
+<div class="floating">
+  <a href="https://wa.me/917280076112" class="wa">💬</a>
+  <a href="tel:9507212121" class="call">📞</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 Flex Print</p>
+</div>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration:1000,
+  once:true
+});
+</script>
+
+</body>
+</html>
